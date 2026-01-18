@@ -1,0 +1,45 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天UTC时间00:00运行
+  workflow_dispatch:     # 允许手动触发
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+
+jobs:
+  generate-snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: xg-o
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          force_orphan: true
+          commit_message: '🐍 Auto-update snake animation for xg-o'
+          
+      - name: Verify Deployment
+        run: |
+          echo "✅ 贪吃蛇动画已生成并部署"
+          echo "🔗 访问链接: https://raw.githubusercontent.com/xg-o/xg-o/output/github-snake.svg"
+          echo "🕒 下次自动运行: 明天 UTC 00:00"
