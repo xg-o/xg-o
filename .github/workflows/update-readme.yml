@@ -1,0 +1,81 @@
+name: Update README
+
+on:
+  # 每天 UTC 时间 12:00 自动运行
+  schedule:
+    - cron: '0 12 * * *'
+  
+  # 允许手动触发
+  workflow_dispatch:
+  
+  # 当工作流文件更改时运行
+  push:
+    paths:
+      - '.github/workflows/update-readme.yml'
+      - 'README.md'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global pull.rebase false
+          
+      - name: Update README Date
+        run: |
+          # 获取当前日期和时间
+          CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+          CURRENT_YEAR=$(date '+%Y')
+          
+          # 备份原始 README
+          cp README.md README.md.backup
+          
+          # 更新日期占位符
+          sed -i "s/{{ UPDATE_DATE }}/$CURRENT_DATE/g" README.md
+          sed -i "s/{{ CURRENT_YEAR }}/$CURRENT_YEAR/g" README.md
+          
+          # 检查是否有更改
+          if ! diff -q README.md README.md.backup > /dev/null; then
+            echo "📅 Updating README with new date: $CURRENT_DATE"
+            
+            # 提交更改
+            git add README.md
+            git commit -m "📅 Auto-update README: $CURRENT_DATE"
+            git push
+            echo "✅ README updated successfully"
+          else
+            echo "📄 No changes to README"
+          fi
+          
+          # 清理备份文件
+          rm README.md.backup
+          
+      - name: Update Statistics Cache
+        run: |
+          # 清理 GitHub Stats 缓存
+          echo "🔄 Clearing GitHub Stats cache..."
+          curl -s "https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&cache_seconds=$(date +%s)" > /dev/null
+          curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=${{ github.repository_owner }}&cache_seconds=$(date +%s)" > /dev/null
+          
+      - name: Send Success Notification
+        if: success()
+        run: |
+          echo "🎉 README update workflow completed successfully!"
+          echo "📅 Last updated: $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          
+      - name: Send Failure Notification
+        if: failure()
+        run: |
+          echo "❌ README update workflow failed!"
+          echo "Please check the workflow logs for details"
