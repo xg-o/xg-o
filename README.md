@@ -197,7 +197,7 @@
 ![GitHub followers](https://img.shields.io/github/followers/YOUR_USERNAME?style=social)
 ![GitHub User's stars](https://img.shields.io/github/stars/YOUR_USERNAME?style=social)
 
-**最后更新**: {{ UPDATE_DATE }}  
+**最后更新**: 2026-01-18 13:34:33 UTC  
 **自动更新**: ✅ 已启用  
 
 *✨ 祝你今天编码愉快！ ✨*
