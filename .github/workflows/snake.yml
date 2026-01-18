@@ -1,0 +1,62 @@
+name: Generate Snake Animation
+
+on:
+  # 每天 UTC 时间 00:00 自动运行
+  schedule:
+    - cron: "0 0 * * *"
+  
+  # 允许手动触发
+  workflow_dispatch:
+  
+  # 当代码推送到主分支时运行
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9&animate=true
+            dist/github-contribution-grid-snake-dark.gif?palette=github-dark&animate=true
+          
+      - name: Upload Snake Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: snake-animation
+          path: dist/
+          retention-days: 7
+          
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          force_orphan: true
+          cname: snake-animation.${{ github.repository_owner }}.github.io
+          
+      - name: Notify Success
+        if: success()
+        run: |
+          echo "🎉 Snake animation generated successfully!"
+          echo "📁 Output branch: output"
+          echo "🔗 SVG URL: https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ github.repository_owner }}/output/github-contribution-grid-snake.svg"
+          
+      - name: Notify Failure
+        if: failure()
+        run: |
+          echo "❌ Failed to generate snake animation"
+          echo "Please check the workflow logs for details"
