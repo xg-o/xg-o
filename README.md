@@ -1,8 +1,7 @@
 <!--
-  GitHub个人主页 - 定制版
+  GitHub个人主页
   用户：xg-o
   网站：http://xgwa.rf.gd/
-  生成时间：2025-01-18
 -->
 
 <div align="center">
@@ -159,6 +158,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/xg-o?style=social)
 
 **🌐 个人网站**: [巡光网](http://xgwa.rf.gd/)  
+**🎫 来自**:代码由ai生成，略有改动
 
 <p>
   <img src="https://img.shields.io/badge/Made_with_❤️_for-xg--o-FF6B6B?style=for-the-badge" alt="Made for xg-o" />
