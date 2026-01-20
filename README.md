@@ -9,7 +9,7 @@
 
 <!-- 动态打字效果 -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=欢迎+来到+xg-o+的主页;探索+技术+无限+可能;创新+从+这里+开始">
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=欢迎来到xg-o的主页;探索+技术+无限+可能;创新+从+这里+开始;代码由ai生成！">
   <img alt="Typing SVG" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=000000&center=true&vCenter=true&width=500&lines=欢迎+来到+xg-o+的主页;探索+技术+无限+可能;创新+从+这里+开始">
 </picture>
 
