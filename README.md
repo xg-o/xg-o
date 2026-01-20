@@ -136,7 +136,7 @@
 
 - 🔭 **正在开发**: [巡光网](http://xgwa.rf.gd/)  
 - 🌱 **正在学习**: 如何创建并使用数据库
-- 📡 **联系我**: [邮箱📫](mailto:xunguanglxgkj@hotmail.com&subject=联系&body=巡光网（xgwa.rf.gd）站长%0A匿名)丨[电话📞](tel:0)丨[短信📧](sms:0?body=联系巡光网（xgwa.rf.gd）站长↲巡光网真好！↲祝巡光网站长幸福。)…
+- 📡 **联系我**: [邮箱📫](mailto:xunguanglxgkj@hotmail.com&subject=联系&body=巡光网（xgwa.rf.gd）站长%0A匿名)
 - ⚡ **技术趣事**: 热爱自动化一切重复工作
 
 ## 🌐 在线 presence
