@@ -47,20 +47,6 @@
 
 </div>
 
-## 🏆 GitHub 成就墙
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=xg-o&theme=onedark&no-frame=true&no-bg=true&margin-w=15&margin-h=15&column=7&row=2" alt="GitHub Trophies" />
-</div>
-
-## 📈 GitHub 活动贡献图
-
-<div align="center">
-
-[![GitHub Activity Graph](https://github-readme-activity-graph.cyclic.app/graph?username=xg-o&theme=react-dark&bg_color=0d1117&hide_border=true&custom_title=xg-o的贡献图表&area=true&point=58a6ff&line=58a6ff&color=58a6ff&radius=8)](https://github.com/xg-o)
-
-</div>
-
 ## 🐍 GitHub 贪吃蛇动画
 
 <div align="center">
@@ -100,19 +86,6 @@
   <img src="https://skillicons.dev/icons?i=git,github,gitlab,vscode,idea,postman,figma,linux" alt="Dev Tools" />
 </div>
 
-## 🚀 项目展示
-
-<div align="center">
-
-<!-- 项目卡片示例 -->
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=xg-o&repo=awesome-project&theme=dark&show_owner=true)](https://github.com/xg-o/awesome-project)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=xg-o&repo=web-app&theme=dark&show_owner=true)](https://github.com/xg-o/web-app)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=xg-o&repo=mobile-app&theme=radical&show_owner=true)](https://github.com/xg-o/mobile-app)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=xg-o&repo=api-server&theme=radical&show_owner=true)](https://github.com/xg-o/api-server)
-
-</div>
-
 ## 📅 GitHub 贡献日历
 
 <div align="center">
@@ -135,9 +108,8 @@
 ## 🎯 当前动态
 
 - 🔭 **正在开发**: [巡光网](http://xgwa.rf.gd/)  
-- 🌱 **正在学习**: 如何创建并使用数据库
+- 🌱 **正在学习**: 暂无
 - 📡 **联系我**: [邮箱📫](mailto:xunguanglxgkj@hotmail.com&subject=联系&body=巡光网（xgwa.rf.gd）站长%0A匿名)
-- ⚡ **技术趣事**: 热爱自动化一切重复工作
 
 ## 🌐 在线 presence
 
